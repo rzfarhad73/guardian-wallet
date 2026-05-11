@@ -5,6 +5,8 @@
 
 You're about to sign a transaction you don't fully understand. Guardian tells you what it does, how risky it is, and what to do about it, in under 10 seconds, with AI inference running locally through QVAC before you click confirm.
 
+[![Watch the demo](https://img.shields.io/badge/▶%20Watch%20Demo-Google%20Drive-blue?style=for-the-badge&logo=googledrive)](https://drive.google.com/file/d/1fPqJSJ2Jy5aXXYUMnNAqOPxv_Pn0jSzF/view?usp=drive_link)
+
 ---
 
 ## Judging Scorecard
