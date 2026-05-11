@@ -1,0 +1,70 @@
+[
+  {
+    "id": "seed-phrase-validation",
+    "description": "Fake wallet validation asks for recovery phrase",
+    "text": "Validate your wallet now by entering your recovery phrase. Failure to synchronize your account will lock rewards.",
+    "expectedFindings": ["seed-phrase-request", "wallet-validation"],
+    "expectedMinScore": 90
+  },
+  {
+    "id": "private-key-export",
+    "description": "Fake support asks for private key export",
+    "text": "Official support agent: export key and send your private key so we can restore your Phantom access.",
+    "expectedFindings": ["private-key-request", "fake-support"],
+    "expectedMinScore": 80
+  },
+  {
+    "id": "connect-claim-airdrop",
+    "description": "Connect wallet plus claim reward flow",
+    "text": "Connect your wallet to claim your airdrop reward. Limited time bonus expires today.",
+    "expectedFindings": ["connect-claim-domain", "urgent-claim", "airdrop-mention"],
+    "expectedMinScore": 60
+  },
+  {
+    "id": "fake-token-migration",
+    "description": "Fake migration and authority-transfer language",
+    "text": "Protocol upgrade required. Migrate your tokens to Solana 2.0 and approve setAuthority for full control of your token portfolio.",
+    "expectedFindings": ["fake-migration"],
+    "expectedMinScore": 50
+  },
+  {
+    "id": "impersonation-url",
+    "description": "Wallet brand impersonation in unofficial domain",
+    "text": "Your Phantom account will be suspended. Visit https://phantom-verify-wallet.xyz/restore to validate wallet access.",
+    "expectedFindings": ["fake-support", "wallet-brand-impersonation-url", "phishing-tld", "verify-seed-url"],
+    "expectedMinScore": 95
+  },
+  {
+    "id": "literal-scam-url",
+    "description": "Obviously malicious URL",
+    "text": "Claim now at https://solana-scam-airdrop.example/scam before rewards expire.",
+    "expectedFindings": ["scam-in-url", "urgent-claim", "airdrop-mention"],
+    "expectedMinScore": 80
+  },
+  {
+    "id": "qr-payment-urgency",
+    "description": "Urgent QR payment pressure",
+    "text": "Scan this QR payment now. Deposit urgently before the claim window expires.",
+    "expectedFindings": ["urgent-claim", "qr-urgency"],
+    "expectedMinScore": 45
+  },
+  {
+    "id": "safe-no-seed-required",
+    "description": "Negated seed phrase warning should stay safe",
+    "text": "No seed phrase required. This guide explains how to verify the official domain before connecting.",
+    "expectedMaxScore": 0
+  },
+  {
+    "id": "safe-governance-recap",
+    "description": "Plain governance update",
+    "text": "Weekly governance recap: proposal voting starts Friday and no wallet connection is required for reading the summary.",
+    "expectedMaxScore": 0
+  },
+  {
+    "id": "safe-airdrop-announcement",
+    "description": "Airdrop mention alone stays low",
+    "text": "Airdrop distribution update: eligibility list will be published on the official project site next week.",
+    "expectedFindings": ["airdrop-mention"],
+    "expectedMaxScore": 10
+  }
+]

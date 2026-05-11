@@ -1,0 +1,9 @@
+node_modules
+.next
+apps/web/.next
+coverage
+dist
+build
+package-lock.json
+*.log
+*.tsbuildinfo

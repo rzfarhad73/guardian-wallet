@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.shadow-panel {
+  box-shadow: var(--shadow-panel);
+}
+
+.wallet-adapter-button {
+  background: var(--color-primary) !important;
+  border-radius: 8px !important;
+  height: 42px !important;
+}
+.wallet-adapter-dropdown-list {
+  border-radius: 8px !important;
+}
+
+@media (max-width: 767px) {
+  * {
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}

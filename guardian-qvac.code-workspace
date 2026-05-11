@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "Guardian QVAC",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.workingDirectories": [
+      {
+        "directory": "apps/web",
+        "changeProcessCWD": true
+      }
+    ],
+    "tailwindCSS.experimental.configFile": "apps/web/tailwind.config.ts",
+    "typescript.tsdk": "node_modules/typescript/lib"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  }
+}

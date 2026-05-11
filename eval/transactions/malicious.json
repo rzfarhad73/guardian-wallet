@@ -1,0 +1,272 @@
+[
+  {
+    "id": "delegate-approval-unknown-program",
+    "description": "Unknown program requesting token delegate approval",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [{ "programId": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "known": false }],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [{ "delegate": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "amount": "1000000000" }],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 60,
+    "expectedFindings": ["unknown-program", "token-approval"]
+  },
+  {
+    "id": "authority-change",
+    "description": "Token authority change — classic rug or drainer",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [
+        {
+          "account": "TokenAccAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "newAuthority": "AttackerAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "authorityType": "MintTokens"
+        }
+      ],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 60,
+    "expectedFindings": ["authority-change"]
+  },
+  {
+    "id": "pumpfun-authority-change",
+    "description": "Pump.fun program + authority change — rug pull pattern",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [
+        { "programId": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P", "label": "Pump.fun", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [
+        {
+          "account": "TokenAccAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "newAuthority": "AttackerAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "authorityType": "MintTokens"
+        }
+      ],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 60,
+    "expectedFindings": ["authority-change", "pumpfun-authority-change"]
+  },
+  {
+    "id": "high-value-with-unknown-program",
+    "description": "Unknown program + high-value SOL transfer",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [{ "programId": "Unkn0wnXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "known": false }],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "10",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Unkn0wnXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 30,
+    "expectedFindings": ["unknown-program", "high-value-transfer"]
+  },
+  {
+    "id": "suspicious-memo-seed-phrase",
+    "description": "Transaction memo contains seed phrase language",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [
+        { "programId": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr", "label": "Memo", "known": true }
+      ],
+      "instructions": [
+        {
+          "type": "Memo",
+          "description": "Validate your wallet by entering your seed phrase to restore access",
+          "raw": {}
+        }
+      ],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 25,
+    "expectedFindings": ["suspicious-text"]
+  },
+  {
+    "id": "scatter-dust-attack",
+    "description": "Scatter transfer to 6 recipients — dust attack",
+    "facts": {
+      "signerAddresses": ["Sender111111111111111111111111111111111111111"],
+      "programs": [
+        { "programId": "11111111111111111111111111111111", "label": "System Program", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim1111111111111111111111111111111111111"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim2222222222222222222222222222222222222"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim3333333333333333333333333333333333333"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim4444444444444444444444444444444444444"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim5555555555555555555555555555555555555"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Victim6666666666666666666666666666666666666"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 25,
+    "expectedFindings": ["scatter-transfer"]
+  },
+  {
+    "id": "nft-drain-multi-asset",
+    "description": "Unknown program transferring NFT + SOL in one tx",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [{ "programId": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "known": false }],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "NFT",
+          "amount": "1",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "mint": "NFTMintAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        {
+          "assetType": "SOL",
+          "amount": "2",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 25,
+    "expectedFindings": ["unknown-program", "multiple-assets"]
+  },
+  {
+    "id": "spam-bot-memo",
+    "description": "Transaction memo advertising a volume bot",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [
+        { "programId": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr", "label": "Memo", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "0.0001",
+          "from": "Bot111111111111111111111111111111111111111",
+          "to": "You111111111111111111111111111111111111111"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "memoText": "Try our volume bot — 100k daily volume, 10m trades, push 3 your token to the top!",
+      "summaryFacts": []
+    },
+    "expectedMinScore": 25,
+    "expectedFindings": ["spam-bot-memo"]
+  },
+  {
+    "id": "unknown-program-with-multi-approval",
+    "description": "Unknown program with both approval and authority change — drainer pattern",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [{ "programId": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "known": false }],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [{ "delegate": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "amount": "999999999" }],
+      "authorityChanges": [
+        {
+          "account": "TokenAccAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "newAuthority": "Dra1nerXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "authorityType": "AccountOwner"
+        }
+      ],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 80,
+    "expectedFindings": ["unknown-program", "token-approval", "authority-change"]
+  },
+  {
+    "id": "high-value-spl-transfer",
+    "description": "5000 SPL tokens transferred to unknown address",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SPL",
+          "amount": "5000",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Unkn0wnXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "mint": "USDCmintAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMinScore": 15,
+    "expectedFindings": ["high-value-transfer"]
+  }
+]

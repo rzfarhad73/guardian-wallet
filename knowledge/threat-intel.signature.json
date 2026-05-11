@@ -1,0 +1,6 @@
+{
+  "scheme": "ed25519",
+  "signedCanonicalJson": true,
+  "publicKeySpkiDerBase64": "MCowBQYDK2VwAyEAr+vteUQQTcy+Z1aGk78JOPVv6dne2QuOL/hIhvXGKk0=",
+  "signatureBase64": "vKxN/QFdK+B8I4Pjmz11ngjjVNoH8OV6j8EbjkLsobH9g0NRoW5rKCigU2kF9/agsiVCht0nplpZgurxdkLLDg=="
+}

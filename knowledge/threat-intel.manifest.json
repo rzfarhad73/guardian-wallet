@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "bundleId": "guardian-threat-intel-local",
+  "version": "2026.05.11",
+  "generatedAt": "2026-05-11T00:00:00.000Z",
+  "description": "Signed manifest for Guardian local scam patterns, known program registry, and known bad actor rules.",
+  "sources": [
+    {
+      "path": "knowledge/scam-patterns.json",
+      "sha256": "392d737b868eedb25385fdd07277d03e2ea883f85291db08f6e5d6ef52fa1229"
+    },
+    {
+      "path": "apps/web/lib/solana/classifyInstruction.ts",
+      "sha256": "a3f2ec4614653d2bbd67a1e8f6f92b6a3e4f3d0a706cbe477f0aa16575d2fde0"
+    },
+    {
+      "path": "apps/web/lib/solana/walletRisk.ts",
+      "sha256": "a3eb3bed724dcf38d11d0e978f9dbc97c94deb9ee70a78223be0e3d9aa203634"
+    }
+  ]
+}

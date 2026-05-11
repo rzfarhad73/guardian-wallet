@@ -1,0 +1,39 @@
+{
+  "name": "guardian-wallet",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Guardian Wallet Firewall: local AI safety layer for Solana wallets using QVAC.",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm --workspace apps/web run dev",
+    "build": "npm --workspace apps/web run build",
+    "lint": "npm --workspace apps/web run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm --workspace apps/web run typecheck",
+    "test": "npm --workspace apps/web run test",
+    "qvac:test": "node scripts/qvac-smoke-test.mjs",
+    "eval": "vite-node --config apps/web/vitest.config.ts scripts/run-eval.mjs",
+    "threat:intel:verify": "node scripts/verify-threat-intel.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
+  },
+  "overrides": {
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "puppeteer": "^24.43.0",
+    "sharp": "^0.34.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

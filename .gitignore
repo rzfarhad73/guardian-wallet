@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# TypeScript
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache (mypy, pyc, etc — not part of this project)
+.mypy_cache/
+__pycache__/
+*.pyc
+
+# Editors
+.vscode/settings.json
+.idea/
+
+# QVAC model cache (downloaded automatically — not part of the repo)
+.qvac/
+
+# Next.js auto-generated type reference (regenerated on every build)
+**/next-env.d.ts

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardian Wallet Firewall</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 320px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f4f6f9;
+        color: #1e293b;
+      }
+      .header {
+        background: #0d9e7e;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .header-text h1 {
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .header-text p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
+        margin-top: 1px;
+      }
+      .status-card {
+        background: white;
+        margin: 12px;
+        border-radius: 10px;
+        padding: 14px;
+        border: 1px solid #e2e8f0;
+      }
+      .status-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+      .status-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .dot-green {
+        background: #22c55e;
+      }
+      .dot-red {
+        background: #ef4444;
+      }
+      .dot-yellow {
+        background: #eab308;
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .note {
+        font-size: 11px;
+        color: #94a3b8;
+        margin: 0 12px 4px;
+        line-height: 1.5;
+      }
+
+      .btn {
+        display: block;
+        width: calc(100% - 24px);
+        margin: 8px 12px;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        border: none;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: #0d9e7e;
+        color: white;
+      }
+      .btn-primary:hover {
+        background: #0b8a6d;
+      }
+      .btn-secondary {
+        background: white;
+        color: #374151;
+        border: 1px solid #e2e8f0;
+      }
+      .btn-secondary:hover {
+        background: #f8fafc;
+      }
+      .footer {
+        padding: 8px 12px 12px;
+        font-size: 10px;
+        color: #475569;
+        text-align: center;
+      }
+      .intercept-status {
+        margin: 0 12px 0;
+        padding: 10px 12px;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #166534;
+      }
+      .intercept-status.inactive {
+        background: #fef9c3;
+        border-color: #fde68a;
+        color: #92400e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2L4 5v6c0 5.55 3.84 10.74 8 11.93C16.16 21.74 20 16.55 20 11V5L12 2z"
+          fill="white"
+          fill-opacity="0.9"
+        />
+      </svg>
+      <div class="header-text">
+        <h1>Guardian Wallet Firewall</h1>
+        <p>Local AI safety — no data leaves your device</p>
+      </div>
+    </div>
+
+    <div class="status-card">
+      <div class="status-label">Guardian Server</div>
+      <div class="status-row" id="server-status">
+        <div class="dot dot-yellow" id="status-dot"></div>
+        <span id="status-text">Checking…</span>
+      </div>
+    </div>
+
+    <div class="intercept-status" id="intercept-info">✓ Wallet interceptor active on this page</div>
+
+    <br />
+
+    <a href="http://localhost:3000" target="_blank" class="btn btn-primary"> Open Guardian App → </a>
+    <button id="refresh-btn" class="btn btn-secondary">Refresh status</button>
+
+    <div class="footer">Transactions are analyzed locally via QVAC — no cloud AI, no telemetry.</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

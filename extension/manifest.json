@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Guardian Wallet Firewall",
+  "version": "0.1.0",
+  "description": "Local AI safety layer for Solana wallets. Analyzes transactions before you sign — entirely on-device via QVAC.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Guardian Wallet Firewall"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["interceptor.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["relay.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["tabs"],
+  "host_permissions": ["http://localhost:3000/*"]
+}

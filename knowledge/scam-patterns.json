@@ -1,0 +1,471 @@
+[
+  {
+    "id": "seed-phrase-request",
+    "title": "Seed phrase request scam",
+    "category": "seed_phrase",
+    "severity": "critical",
+    "text": "Scammers often ask users to enter, validate, verify, or synchronize their recovery phrase. Legitimate wallet support never asks for a seed phrase.",
+    "examplePhrases": [
+      "validate your wallet",
+      "enter your recovery phrase",
+      "synchronize your wallet",
+      "restore access",
+      "support agent needs your phrase"
+    ]
+  },
+  {
+    "id": "private-key-request",
+    "title": "Private key request scam",
+    "category": "private_key",
+    "severity": "critical",
+    "text": "Any request for a private key is a critical warning sign. Private keys give full control of funds.",
+    "examplePhrases": [
+      "export your private key",
+      "paste private key",
+      "support needs your key",
+      "import key to verify"
+    ]
+  },
+  {
+    "id": "fake-wallet-validation",
+    "title": "Fake wallet validation",
+    "category": "validation",
+    "severity": "critical",
+    "text": "Fake validation pages claim that a wallet must be validated, rectified, synchronized, or manually verified.",
+    "examplePhrases": ["validate your wallet", "rectify wallet", "manual verification", "synchronize account"]
+  },
+  {
+    "id": "fake-airdrop-claim",
+    "title": "Fake airdrop claim",
+    "category": "airdrop",
+    "severity": "high",
+    "text": "Airdrop scams promise free tokens and ask users to connect a wallet or sign unclear transactions.",
+    "examplePhrases": ["claim airdrop", "free tokens", "connect to claim", "eligible reward"]
+  },
+  {
+    "id": "urgent-limited-time-claim",
+    "title": "Urgent limited-time claim",
+    "category": "urgency",
+    "severity": "high",
+    "text": "Scammers use countdowns, expiration warnings, or limited-time messages to pressure users into signing.",
+    "examplePhrases": ["expires soon", "limited time", "claim now", "last chance"]
+  },
+  {
+    "id": "fake-discord-support",
+    "title": "Fake Discord support",
+    "category": "support",
+    "severity": "high",
+    "text": "Fake Discord support agents impersonate moderators and ask users to verify wallets or move to external links.",
+    "examplePhrases": ["discord admin", "open a ticket", "verify wallet in support", "moderator assistance"]
+  },
+  {
+    "id": "fake-telegram-support",
+    "title": "Fake Telegram support",
+    "category": "support",
+    "severity": "high",
+    "text": "Fake Telegram support accounts often ask for recovery phrases, remote access, or wallet validation.",
+    "examplePhrases": ["telegram support", "DM admin", "support agent", "validate through this link"]
+  },
+  {
+    "id": "wallet-drainer-approval",
+    "title": "Wallet drainer approval",
+    "category": "approval",
+    "severity": "critical",
+    "text": "Wallet drainers often request broad token approvals that let another address move assets after signing.",
+    "examplePhrases": ["approve all", "delegate permission", "spend limit", "permission request"]
+  },
+  {
+    "id": "malicious-token-approval",
+    "title": "Malicious token approval",
+    "category": "approval",
+    "severity": "high",
+    "text": "Token approval requests can be legitimate, but high or unlimited approvals should be treated with caution.",
+    "examplePhrases": ["approve token", "set delegate", "allow spending", "token permission"]
+  },
+  {
+    "id": "blind-signing-warning",
+    "title": "Blind signing warning",
+    "category": "signing",
+    "severity": "high",
+    "text": "Blind signing makes it hard to understand transaction intent. Unknown instructions increase risk.",
+    "examplePhrases": ["blind sign", "unknown instruction", "cannot decode", "raw transaction"]
+  },
+  {
+    "id": "fake-nft-mint",
+    "title": "Fake NFT mint",
+    "category": "nft",
+    "severity": "high",
+    "text": "Fake NFT mint pages may ask for wallet signatures that transfer existing NFTs or tokens.",
+    "examplePhrases": ["free mint", "exclusive NFT", "mint now", "limited NFT"]
+  },
+  {
+    "id": "fake-staking-reward",
+    "title": "Fake staking reward",
+    "category": "staking",
+    "severity": "high",
+    "text": "Fake staking rewards ask users to claim yield through unfamiliar websites or approval transactions.",
+    "examplePhrases": ["staking reward", "claim yield", "unstake bonus", "reward unlock"]
+  },
+  {
+    "id": "fake-bridge-claim",
+    "title": "Fake bridge claim",
+    "category": "bridge",
+    "severity": "high",
+    "text": "Fake bridge recovery or claim pages may imitate bridge interfaces and request dangerous permissions.",
+    "examplePhrases": ["bridge claim", "recover bridged funds", "cross-chain reward", "bridge migration"]
+  },
+  {
+    "id": "fake-token-migration",
+    "title": "Fake token migration",
+    "category": "migration",
+    "severity": "high",
+    "text": "Scammers claim a token migration is required and prompt users to sign approval or transfer transactions.",
+    "examplePhrases": ["token migration", "swap old token", "migrate now", "new contract"]
+  },
+  {
+    "id": "malicious-qr-payment",
+    "title": "Malicious QR payment",
+    "category": "qr",
+    "severity": "medium",
+    "text": "QR payment requests with urgency or unclear recipients can route users to malicious transfers.",
+    "examplePhrases": ["scan QR", "pay now", "deposit before expiry", "urgent QR"]
+  },
+  {
+    "id": "impersonated-founder-team",
+    "title": "Impersonated founder or team",
+    "category": "impersonation",
+    "severity": "high",
+    "text": "Scammers impersonate founders, teams, or official announcements to push users toward fake claim links.",
+    "examplePhrases": ["from the founder", "official team", "CEO announcement", "team reward"]
+  },
+  {
+    "id": "fake-security-alert",
+    "title": "Fake security alert",
+    "category": "security_alert",
+    "severity": "critical",
+    "text": "Fake alerts claim funds are at risk and tell users to restore, validate, or move assets immediately.",
+    "examplePhrases": ["security alert", "funds at risk", "restore wallet", "protect your account"]
+  },
+  {
+    "id": "fake-kyc-wallet-verification",
+    "title": "Fake KYC wallet verification",
+    "category": "kyc",
+    "severity": "high",
+    "text": "Wallet KYC scams claim users must verify ownership by connecting a wallet or sharing sensitive details.",
+    "examplePhrases": ["KYC wallet", "verify ownership", "compliance check", "identity wallet check"]
+  },
+  {
+    "id": "fake-refund-reimbursement",
+    "title": "Fake refund or reimbursement",
+    "category": "refund",
+    "severity": "high",
+    "text": "Refund scams promise reimbursement but require wallet connection, seed phrase entry, or a suspicious signature.",
+    "examplePhrases": ["refund available", "reimbursement portal", "claim compensation", "recover lost funds"]
+  },
+  {
+    "id": "unknown-dapp-permission",
+    "title": "Unknown dApp permission request",
+    "category": "permission",
+    "severity": "high",
+    "text": "Unknown dApps requesting broad wallet permissions or unclear signing should be reviewed carefully.",
+    "examplePhrases": ["permission request", "connect wallet", "sign to continue", "approve access"]
+  },
+  {
+    "id": "set-authority-scam",
+    "title": "SetAuthority transaction scam",
+    "category": "authority",
+    "severity": "critical",
+    "text": "SetAuthority instructions transfer ownership of a token account or mint to another address. Scammers disguise this as a migration or upgrade, but it permanently surrenders control of your assets.",
+    "examplePhrases": [
+      "transfer authority",
+      "migrate token",
+      "set authority",
+      "upgrade contract",
+      "new program owner",
+      "protocol ownership"
+    ]
+  },
+  {
+    "id": "close-account-drain",
+    "title": "CloseAccount instruction drain",
+    "category": "account_closure",
+    "severity": "critical",
+    "text": "CloseAccount instructions close a token account and send its remaining balance to a destination. If the destination is an attacker address, all tokens in that account are lost.",
+    "examplePhrases": [
+      "close account",
+      "drain account",
+      "reclaim rent",
+      "account cleanup",
+      "consolidate tokens"
+    ]
+  },
+  {
+    "id": "unlimited-delegate-approval",
+    "title": "Unlimited token delegate approval",
+    "category": "approval",
+    "severity": "critical",
+    "text": "An SPL Token Approve instruction with a very large or maximum amount (u64 max) gives a third party unlimited spending permission over your token account. This is a hallmark of wallet drainers.",
+    "examplePhrases": [
+      "unlimited approval",
+      "max amount approve",
+      "full delegation",
+      "approve all tokens",
+      "unlimited spend"
+    ]
+  },
+  {
+    "id": "rug-pull-signal",
+    "title": "Rug pull or exit scam language",
+    "category": "rug_pull",
+    "severity": "high",
+    "text": "Rug pull promotions use hype, guaranteed returns, and insider access language to attract buyers before developers drain liquidity.",
+    "examplePhrases": [
+      "guaranteed returns",
+      "100x gem",
+      "insider presale",
+      "liquidity locked",
+      "dev doxxed",
+      "moon soon",
+      "get in early"
+    ]
+  },
+  {
+    "id": "dust-attack",
+    "title": "Dust attack follow-up scam",
+    "category": "dust",
+    "severity": "medium",
+    "text": "Attackers send tiny amounts of SOL or tokens to wallets to identify active addresses, then follow up with phishing links, fake claim pages, or social engineering.",
+    "examplePhrases": [
+      "small deposit received",
+      "claim your reward",
+      "you received a gift",
+      "mystery token",
+      "unexpected airdrop",
+      "verify to claim dust reward"
+    ]
+  },
+  {
+    "id": "lookalike-token-mint",
+    "title": "Lookalike token mint impersonation",
+    "category": "impersonation",
+    "severity": "high",
+    "text": "Scammers deploy tokens with names or symbols that closely resemble legitimate projects (e.g. 'USDC' with a different mint address) to trick users into approving or selling the wrong asset.",
+    "examplePhrases": [
+      "USDC airdrop",
+      "SOL reward",
+      "official token",
+      "real BONK",
+      "verified mint",
+      "same as official"
+    ]
+  },
+  {
+    "id": "fake-pump-fun-launch",
+    "title": "Fake pump.fun or meme coin launch",
+    "category": "meme_coin",
+    "severity": "medium",
+    "text": "Scammers create fake or copycat meme coin launches with fabricated social proof, dev wallet lockups, and community hype to drive buys before dumping.",
+    "examplePhrases": [
+      "fair launch",
+      "stealth launch",
+      "dev locked",
+      "safu",
+      "community token",
+      "no team tokens",
+      "pump incoming"
+    ]
+  },
+  {
+    "id": "fake-swap-interface",
+    "title": "Fake swap or DEX interface",
+    "category": "dex",
+    "severity": "high",
+    "text": "Fake DEX interfaces mimic Jupiter, Raydium, or Orca and route swap transactions through malicious contracts that take funds instead of swapping them.",
+    "examplePhrases": [
+      "swap now",
+      "best rate",
+      "aggregator swap",
+      "instant swap",
+      "0% fee swap",
+      "claim swap bonus"
+    ]
+  },
+  {
+    "id": "remote-access-request",
+    "title": "Remote access or screen sharing request",
+    "category": "remote_access",
+    "severity": "critical",
+    "text": "Support scammers ask users to install remote desktop tools or share screens under the pretense of helping recover accounts or fix wallet issues.",
+    "examplePhrases": [
+      "install AnyDesk",
+      "share your screen",
+      "remote support",
+      "TeamViewer",
+      "we need to access",
+      "screen share to fix"
+    ]
+  },
+  {
+    "id": "wallet-connect-phishing",
+    "title": "WalletConnect phishing link",
+    "category": "phishing",
+    "severity": "high",
+    "text": "Phishing sites generate WalletConnect QR codes or deep links that connect victims' wallets to malicious dApps, triggering approval or transfer transactions silently.",
+    "examplePhrases": [
+      "scan to connect",
+      "WalletConnect link",
+      "pair your wallet",
+      "connect via QR",
+      "mobile wallet connect"
+    ]
+  },
+  {
+    "id": "fake-governance-vote",
+    "title": "Fake governance vote or proposal",
+    "category": "governance",
+    "severity": "medium",
+    "text": "Fake governance prompts ask users to vote or delegate tokens through external sites that actually execute approval or transfer transactions.",
+    "examplePhrases": [
+      "governance vote",
+      "proposal live",
+      "delegate to vote",
+      "community vote",
+      "vote to earn",
+      "DAO proposal"
+    ]
+  },
+  {
+    "id": "free-nft-mint-trap",
+    "title": "Free NFT mint with hidden approval",
+    "category": "nft",
+    "severity": "high",
+    "text": "Free mint offers contain transactions that embed a broad token approval or SetAuthority instruction alongside the mint, draining existing assets while users focus on the NFT.",
+    "examplePhrases": [
+      "free NFT",
+      "whitelist mint",
+      "0 SOL mint",
+      "community mint",
+      "airdrop NFT",
+      "exclusive collection mint"
+    ]
+  },
+  {
+    "id": "clipboard-hijack-warning",
+    "title": "Clipboard hijacking warning",
+    "category": "clipboard",
+    "severity": "high",
+    "text": "Malware can silently replace copied wallet addresses with attacker addresses. Always verify the full destination address on screen before signing a transaction.",
+    "examplePhrases": [
+      "double-check address",
+      "address replaced",
+      "wrong address",
+      "clipboard swap",
+      "verify destination",
+      "confirm recipient address"
+    ]
+  },
+  {
+    "id": "fake-multisig-rescue",
+    "title": "Fake multisig or wallet rescue service",
+    "category": "rescue",
+    "severity": "critical",
+    "text": "Fake recovery services claim they can rescue compromised wallets or drain-attacked accounts, but require seed phrases or private keys to 'help', stealing remaining funds.",
+    "examplePhrases": [
+      "wallet rescue",
+      "recover your funds",
+      "multisig recovery",
+      "we can help",
+      "send funds to safe wallet",
+      "recovery specialist"
+    ]
+  },
+  {
+    "id": "pump-dump-social-signal",
+    "title": "Pump and dump coordinated signal",
+    "category": "pump_dump",
+    "severity": "high",
+    "text": "Coordinated pump groups use private chats and countdown timers to drive artificial price spikes before insiders sell. Participants lose value after the dump.",
+    "examplePhrases": [
+      "pump signal",
+      "buy now before pump",
+      "coordinated buy",
+      "group pump",
+      "target reached",
+      "sell signal incoming"
+    ]
+  },
+  {
+    "id": "fake-centralized-exchange-deposit",
+    "title": "Fake exchange deposit page",
+    "category": "exchange",
+    "severity": "high",
+    "text": "Fake exchange deposit pages display QR codes or addresses controlled by attackers, claiming deposits will reflect in accounts on a known exchange.",
+    "examplePhrases": [
+      "deposit to exchange",
+      "Binance deposit",
+      "Coinbase deposit",
+      "exchange wallet address",
+      "send to receive"
+    ]
+  },
+  {
+    "id": "zero-value-token-scam",
+    "title": "Zero-value or spam token airdrop",
+    "category": "spam_token",
+    "severity": "medium",
+    "text": "Worthless tokens are airdropped with names containing URLs or instructions. Interacting with them (swapping, transferring) may trigger malicious contract calls or connect to phishing pages.",
+    "examplePhrases": [
+      "visit to claim",
+      "go to site",
+      "token with URL",
+      "reward at link",
+      "swap this token",
+      "interact to unlock value"
+    ]
+  },
+  {
+    "id": "fake-mev-protection",
+    "title": "Fake MEV or Jito bribe protection",
+    "category": "mev",
+    "severity": "high",
+    "text": "Scammers impersonate MEV protection services like Jito, claiming users must sign an approval or pay a fee to shield transactions from sandwich attacks. Legitimate MEV protection never requires a token approval.",
+    "examplePhrases": [
+      "MEV protection",
+      "Jito bribe",
+      "anti-sandwich",
+      "priority protection",
+      "sign to protect",
+      "MEV shield"
+    ]
+  },
+  {
+    "id": "fake-solana-foundation-grant",
+    "title": "Fake Solana Foundation or Superteam grant",
+    "category": "impersonation",
+    "severity": "high",
+    "text": "Scammers impersonate the Solana Foundation, Superteam, or official Solana programs offering fake grants, ecosystem rewards, or validator bonuses. Legitimate foundation grants never require wallet approval transactions.",
+    "examplePhrases": [
+      "Solana Foundation reward",
+      "Superteam grant",
+      "ecosystem bonus",
+      "official Solana distribution",
+      "foundation allocation",
+      "validator reward airdrop"
+    ]
+  },
+  {
+    "id": "pumpfun-dev-rugpull",
+    "title": "Pump.fun developer rug pull signal",
+    "category": "rug_pull",
+    "severity": "critical",
+    "text": "After a Pump.fun token launch, the developer transferring token authority or revoking mint authority is a classic rug pull setup. Authority changes on newly launched tokens should be treated as critical risk.",
+    "examplePhrases": [
+      "mint authority revoked",
+      "authority transferred",
+      "rug proof token",
+      "dev wallet migrated",
+      "contract ownership changed",
+      "authority set to null"
+    ]
+  }
+]

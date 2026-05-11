@@ -1,0 +1,274 @@
+/* ============================================================
+   Guardian Wallet Firewall — Design Tokens & Component Classes
+   Light and dark palette, severity badges, semantic utilities.
+   Imported by globals.css.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --color-background: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-surface-hover: #f1f5f9;
+
+  /* Text */
+  --color-foreground: #0d1117;
+  --color-muted: #5c6675;
+
+  /* Primary action — brand teal */
+  --color-primary: #0d9e7e;
+  --color-primary-fg: #ffffff;
+
+  /* Semantic: warning (delegate / drainer) */
+  --color-warn-border: #fca5a5;
+  --color-warn-bg: #fef2f2;
+  --color-warn-fg: #991b1b;
+  --color-warn-label: #b91c1c;
+
+  /* Semantic: safe */
+  --color-safe-fg: #047857;
+
+  /* Semantic: danger (inline errors) */
+  --color-danger: #ef4444; /* red-500 */
+  --color-critical: #dc2626; /* red-600 */
+
+  /* Semantic: context accent (info) */
+  --color-accent-border: #a5b4fc;
+  --color-accent-bg: #eef2ff;
+  --color-accent-fg: #3730a3;
+  --color-accent-active-border: #6366f1;
+  --color-accent-active-bg: #eef2ff;
+  --color-accent-active-fg: #4338ca;
+
+  /* Semantic: ocr warning (amber) */
+  --color-ocr-warn-border: #fde68a;
+  --color-ocr-warn-bg: #fffbeb;
+  --color-ocr-warn-fg: #92400e;
+
+  /* QVAC status */
+  --qvac-active-border: #6ee7b7;
+  --qvac-active-bg: #ecfdf5;
+  --qvac-active-fg: #065f46;
+
+  --qvac-mock-border: #fde68a;
+  --qvac-mock-bg: #fffbeb;
+  --qvac-mock-fg: #92400e;
+
+  /* Severity badges */
+  --badge-critical-border: #fca5a5;
+  --badge-critical-bg: #fef2f2;
+  --badge-critical-fg: #991b1b;
+
+  --badge-high-border: #fdba74;
+  --badge-high-bg: #fff7ed;
+  --badge-high-fg: #9a3412;
+
+  --badge-medium-border: #fde68a;
+  --badge-medium-bg: #fffbeb;
+  --badge-medium-fg: #92400e;
+
+  --badge-low-border: #86efac;
+  --badge-low-bg: #f0fdf4;
+  --badge-low-fg: #166534;
+
+  --badge-neutral-border: #e2e8f0;
+  --badge-neutral-bg: #ffffff;
+  --badge-neutral-fg: #475569;
+
+  /* Shadows */
+  --shadow-panel: 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  /* Background gradient */
+  --bg-gradient:
+    radial-gradient(ellipse 60% 40% at 10% -5%, rgba(13, 158, 126, 0.1) 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f4f6f9 60%, #edf0f5 100%);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /*
+   * Deep ocean slate palette.
+   * bg is near-black with a barely-there blue-green tint — not zinc grey, not
+   * blue-navy, but the dark you see in premium crypto / security products
+   * (Phantom, Warp, Linear). Teal brand pops naturally against it.
+   */
+
+  --color-background: #080f17; /* deep ocean black          */
+  --color-surface: #0f1d2b; /* lifted surface — big jump */
+  --color-surface-raised: #1a2f42; /* card-on-card, modals      */
+  --color-border: #1c3041; /* subtle — just above surface */
+  --color-surface-hover: #172639; /* between panel & raised    */
+
+  --color-foreground: #e0ecf6; /* cool near-white              */
+  --color-muted: #7093a8; /* blue-steel muted — 5.3:1 on panel, 6.2:1 on bg */
+
+  --color-primary: #2dd4bf; /* teal-300 — unchanged, glows on this bg */
+  --color-primary-fg: #022c25; /* very dark teal for contrast            */
+
+  --color-warn-border: #991b1b; /* red-800 — visible border             */
+  --color-warn-bg: #3b0f0f; /* deep red surface — clearly alarming  */
+  --color-warn-fg: #fca5a5; /* red-300                              */
+  --color-warn-label: #fca5a5;
+
+  --color-safe-fg: #34d399; /* emerald-400 */
+
+  --color-danger: #f87171; /* red-400 — vivid, readable on dark       */
+  --color-critical: #ef4444; /* red-500 — maximum severity              */
+
+  --color-accent-border: #2e3880;
+  --color-accent-bg: #0d1236;
+  --color-accent-fg: #a5b4fc; /* indigo-300 */
+  --color-accent-active-border: #4f46e5; /* indigo-600 */
+  --color-accent-active-bg: #131843;
+  --color-accent-active-fg: #c7d2fe; /* indigo-200 */
+
+  --color-ocr-warn-border: #7c3a0c;
+  --color-ocr-warn-bg: #1a0d02;
+  --color-ocr-warn-fg: #fcd34d; /* amber-300 */
+
+  --qvac-active-border: #0a5940;
+  --qvac-active-bg: #021a12;
+  --qvac-active-fg: #34d399; /* emerald-400 */
+
+  --qvac-mock-border: #7c3a0c;
+  --qvac-mock-bg: #1a0d02;
+  --qvac-mock-fg: #fcd34d;
+
+  --badge-critical-border: #6b2020;
+  --badge-critical-bg: #1f0a0a;
+  --badge-critical-fg: #fca5a5;
+
+  --badge-high-border: #6b2d0d;
+  --badge-high-bg: #1e0d03;
+  --badge-high-fg: #fb923c; /* orange-400 */
+
+  --badge-medium-border: #7c3a0c;
+  --badge-medium-bg: #1a0d02;
+  --badge-medium-fg: #fcd34d;
+
+  --badge-low-border: #0a5940;
+  --badge-low-bg: #021a12;
+  --badge-low-fg: #34d399; /* emerald-400 */
+
+  --badge-neutral-border: #26404f;
+  --badge-neutral-bg: #0f1d2b;
+  --badge-neutral-fg: #607d92;
+
+  /* Cards cast a light shadow with a faint top-edge highlight. */
+  --shadow-panel: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  /* A dramatic teal spotlight radiates from top-center —
+     like the brand is illuminating the page from above. */
+  --bg-gradient:
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(45, 212, 191, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 0% 100%, rgba(45, 212, 191, 0.05) 0%, transparent 50%), #080f17;
+}
+
+/* Component classes */
+
+/* Severity badges */
+.badge-critical {
+  border-color: var(--badge-critical-border);
+  background-color: var(--badge-critical-bg);
+  color: var(--badge-critical-fg);
+}
+.badge-high {
+  border-color: var(--badge-high-border);
+  background-color: var(--badge-high-bg);
+  color: var(--badge-high-fg);
+}
+.badge-medium {
+  border-color: var(--badge-medium-border);
+  background-color: var(--badge-medium-bg);
+  color: var(--badge-medium-fg);
+}
+.badge-low {
+  border-color: var(--badge-low-border);
+  background-color: var(--badge-low-bg);
+  color: var(--badge-low-fg);
+}
+.badge-neutral {
+  border-color: var(--badge-neutral-border);
+  background-color: var(--badge-neutral-bg);
+  color: var(--badge-neutral-fg);
+}
+
+/* QVAC status badges */
+.badge-qvac-active {
+  border-color: var(--qvac-active-border);
+  background-color: var(--qvac-active-bg);
+  color: var(--qvac-active-fg);
+}
+.badge-qvac-mock {
+  border-color: var(--qvac-mock-border);
+  background-color: var(--qvac-mock-bg);
+  color: var(--qvac-mock-fg);
+}
+
+/* Inline warning (delegate drainer) */
+.warn-box {
+  border-color: var(--color-warn-border);
+  background-color: var(--color-warn-bg);
+  color: var(--color-warn-fg);
+}
+
+/* Inline info/accent (context reminder) */
+.accent-box {
+  border-color: var(--color-accent-border);
+  background-color: var(--color-accent-bg);
+  color: var(--color-accent-fg);
+}
+
+/* Context selector button states */
+.ctx-btn {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+  transition:
+    border-color 150ms,
+    background-color 150ms,
+    color 150ms;
+}
+.ctx-btn:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-foreground);
+}
+.ctx-btn-active {
+  border-color: var(--color-accent-active-border);
+  background-color: var(--color-accent-active-bg);
+  color: var(--color-accent-active-fg);
+}
+
+/* OCR amber warning */
+.ocr-warn-box {
+  border-color: var(--color-ocr-warn-border);
+  background-color: var(--color-ocr-warn-bg);
+  color: var(--color-ocr-warn-fg);
+}
+
+/* Form controls */
+.input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  padding: 0.5rem 0.75rem;
+  transition: border-color 150ms;
+}
+.input::placeholder {
+  color: var(--color-muted);
+}
+.input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

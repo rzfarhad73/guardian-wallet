@@ -1,0 +1,237 @@
+[
+  {
+    "id": "simple-sol-transfer-small",
+    "description": "Small SOL transfer between known wallets — clearly safe",
+    "facts": {
+      "signerAddresses": ["Sender111111111111111111111111111111111111111"],
+      "programs": [
+        { "programId": "11111111111111111111111111111111", "label": "System Program", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "0.05",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Friend111111111111111111111111111111111111111"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 20
+  },
+  {
+    "id": "dex-swap-no-approval",
+    "description": "DEX swap via Jupiter — no approvals",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        { "programId": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4", "label": "Jupiter v6", "known": true },
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SPL",
+          "amount": "10",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "JupiterEscrow1111111111111111111111111111111",
+          "mint": "USDCmintAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
+        {
+          "assetType": "SPL",
+          "amount": "0.04",
+          "from": "JupiterEscrow1111111111111111111111111111111",
+          "to": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "mint": "SOLmintAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 30
+  },
+  {
+    "id": "spl-transfer-known-program",
+    "description": "SPL token transfer via SPL Token program — no approvals or authority changes",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SPL",
+          "amount": "50",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Recipient11111111111111111111111111111111111",
+          "mint": "USDCmintAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 20
+  },
+  {
+    "id": "empty-programs-no-transfers",
+    "description": "Transaction with no programs or transfers",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 20
+  },
+  {
+    "id": "raydium-swap",
+    "description": "Raydium AMM swap — known program, no approvals",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        {
+          "programId": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+          "label": "Raydium AMM v4",
+          "known": true
+        },
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "0.5",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "RaydiumPool11111111111111111111111111111111"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 25
+  },
+  {
+    "id": "nft-mint-metaplex",
+    "description": "Metaplex NFT mint — known program, no approvals",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        {
+          "programId": "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+          "label": "Metaplex Token Metadata",
+          "known": true
+        },
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 15
+  },
+  {
+    "id": "stake-sol",
+    "description": "SOL staking — stake program, no approvals",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        {
+          "programId": "Stake11111111111111111111111111111111111111",
+          "label": "Stake Program",
+          "known": true
+        }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "1",
+          "from": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+          "to": "Stake11111111111111111111111111111111111111"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 20
+  },
+  {
+    "id": "memo-only",
+    "description": "Memo-only transaction with benign text",
+    "facts": {
+      "signerAddresses": [],
+      "programs": [
+        { "programId": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr", "label": "Memo", "known": true }
+      ],
+      "instructions": [{ "type": "Memo", "description": "GM", "raw": {} }],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "memoText": "GM",
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 5
+  },
+  {
+    "id": "close-ata",
+    "description": "Close empty associated token account — reclaim rent",
+    "facts": {
+      "signerAddresses": ["9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM"],
+      "programs": [
+        { "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA", "label": "SPL Token", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": ["Close token account"]
+    },
+    "expectedMaxScore": 15
+  },
+  {
+    "id": "small-sol-transfer-system-only",
+    "description": "Tiny SOL tip — system program only, negligible amount",
+    "facts": {
+      "signerAddresses": ["Sender111111111111111111111111111111111111111"],
+      "programs": [
+        { "programId": "11111111111111111111111111111111", "label": "System Program", "known": true }
+      ],
+      "instructions": [],
+      "transfers": [
+        {
+          "assetType": "SOL",
+          "amount": "0.001",
+          "from": "Sender111111111111111111111111111111111111111",
+          "to": "Tip11111111111111111111111111111111111111111"
+        }
+      ],
+      "approvals": [],
+      "authorityChanges": [],
+      "unknownInstructions": [],
+      "summaryFacts": []
+    },
+    "expectedMaxScore": 10
+  }
+]
