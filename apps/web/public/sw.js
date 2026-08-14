@@ -61,24 +61,32 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(networkFirst(request));
 });
 
+// `Cache.put` rejects outright on a response the Cache API refuses to store — `Vary: *` is the
+// common one (dev servers send it) — and the rejection surfaces as an unhandled error in the
+// page's console, not as a cache miss. Caching is best-effort here, so drop those on the floor.
+async function cacheResponse(request, response) {
+  if (!response.ok || response.headers.get("Vary") === "*") return;
+
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(request, response.clone());
+  } catch {
+    // an uncacheable response is still a perfectly good response to hand back
+  }
+}
+
 async function cacheFirst(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
   const response = await fetch(request);
-  if (response.ok) {
-    const cache = await caches.open(CACHE_NAME);
-    cache.put(request, response.clone());
-  }
+  await cacheResponse(request, response);
   return response;
 }
 
 async function networkFirst(request) {
   try {
     const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
-    }
+    await cacheResponse(request, response);
     return response;
   } catch {
     return (await caches.match(request)) ?? new Response("Network error", { status: 503 });
